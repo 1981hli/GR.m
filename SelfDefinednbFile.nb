@@ -1,5 +1,4 @@
 (*Creat .nb file with auto-replacements.*)
-
 nb=CreateDocument[{},InputAutoReplacements->{
 	"gga"->"\[Alpha]",
 	"ggb"->"\[Beta]",
