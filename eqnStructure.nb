@@ -1,3 +1,0 @@
-(*Print out the structure of eqnList.*)
-
-Map[Column,Union[Level[#,-1]]&/@(eqnList//Flatten)]
