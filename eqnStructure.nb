@@ -1,0 +1,4 @@
+(*Print out the structure of eqnList.*)
+
+Union[Level[#,-1]]&/@(eqnList//Flatten);
+Column/@%
