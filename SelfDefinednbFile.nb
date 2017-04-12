@@ -34,5 +34,4 @@ nb=CreateDocument[{},InputAutoReplacements->{
 	"ggS"->"\[CapitalSigma]",
 	"ggU"->"\[CapitalUpsilon]",
 	"ggX"->"\[CapitalXi]",
-	"ggY"->"\[CapitalPsi]"
-}]
+	"ggY"->"\[CapitalPsi]"}]
