@@ -1,0 +1,1 @@
+Map[Column,Union[Level[#,-1]]&/@(eqnList//Flatten)]
