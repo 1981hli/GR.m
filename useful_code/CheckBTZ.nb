@@ -1,0 +1,25 @@
+Get["xAct`xTras`"]; 
+DefManifold[M, 3, {a, b, c, d, i, j, k, l, \[SadSmiley]}]; 
+DefMetric[-1, g[-a, -b], CD, PrintAs -> "g"]; 
+DefChart[B, M, {1, 2, 3}, {t[], r[], \[Phi][]}, ChartColor -> Red]; 
+$Assumptions = Element[t[], Reals] && Element[r[], Reals] && Element[\[Phi][], Reals] && 0 < r[] && 0 < \[Phi][] < 2*Pi; 
+"--------------------------------------------------------------------------"
+DefScalarFunction[nA]; 
+DefScalarFunction[nB]; 
+MetricInBasis[g, -B, {{-nA[r[]]^2 + nB[r[]]^2*r[]^2, 0, nB[r[]]*r[]^2}, {0, 1/nA[r[]]^2, 0}, {nB[r[]]*r[]^2, 0, r[]^2}}]; 
+MetricCompute[g, B, All]; 
+MatrixForm[Simplify[ToValues[ComponentArray[ToBasis[B][g[-a, -b]]]]]]
+DefConstantSymbol[l$, PrintAs -> "l"]; 
+DefConstantSymbol[M$, PrintAs -> "M"]; 
+DefConstantSymbol[J$, PrintAs -> "J"]; 
+nA[x_] := Sqrt[-M$ + x^2/l$^2 + J$^2/(4*x^2)]; 
+nB[x_] := -(J$/(2*x^2)); 
+"--------------------------------------------------------------------------"
+\[ScriptCapitalL] = (Sqrt[-Detg[]]*(RicciScalarCD[] + 2/l$^2))/(2*Pi); 
+Factor[ContractMetric[ToCanonical[VarD[g[-a, -b], CD][\[ScriptCapitalL]]]]]
+DefTensor[eomg[-a, -b], M]; 
+ruleemog = MakeRule[{eomg[a, b], 2*g[a, b] - 2*l$^2*RicciCD[a, b] + l$^2*g[a, b]*RicciScalarCD[]}, MetricOn -> All]; 
+"--------------------------------------------------------------------------"
+ChangeComponents[RicciCD[{a, B}, {b, B}], RicciCD[-{a, B}, -{b, B}]]; 
+eomg[a, b] /. ruleemog
+Simplify[ToValues[ToValues[ComponentArray[TraceBasisDummy[ToBasis[B][ToBasis[B][(ChangeCovD[#1, CD, PDB] & )[ContractMetric[ToCanonical[%]]]]]]]]]]
