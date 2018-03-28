@@ -1,1 +1,1 @@
-# Setup the Mathematica system in remote server
+# Setup the Mathematica + xAct system in remote server
