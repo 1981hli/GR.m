@@ -1,4 +1,4 @@
-# Setup the Mathematica + xAct system in remote server
+# Setup the Mathematica + xAct environment in remote server
 
 ### Install Mathematica
 
