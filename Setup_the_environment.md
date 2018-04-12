@@ -76,7 +76,7 @@ plink 47.106.72.248 wolfram
 
 ### Connect server within Mathematica
 
-When you succeed in connecting server using ssh directly, you can do this within Mathematica.
+You may connect server within Mathematica only when it works outside it using ssh directly.
 
 ```mathematica
 (*Setup kernels*)
@@ -94,7 +94,7 @@ cp -r xAct/ ~/.Mathematica/Applications/
 
 ### Compile xperm
 
-You should compile xperm in some cases.
+In some cases the original xperm.linux.64-bit did not work, you should compile it yourself.
 
 ```bash
 yum install epel-release.noarch
